@@ -1,0 +1,78 @@
+<div class='bodyCnt'>
+	<div class='wraper'>
+		<div class='' id='inner-main'>
+			<div class='subNavCnt'>
+				<h1><%= @project.title %> </h1>
+				<div class='moreLinks'>
+					<ul>
+						<li>
+						<%= link_to "Back", admin_projects_path %>
+						</li>
+					</ul>
+				</div>
+				<div class='clear'></div>
+			</div>
+			<div class='wraper'>
+				<div class='sectionCnt'>
+					<h2>AL-JUBAIL REFINERY</h2>
+					<div class='formLayout'>
+						<div class='row'>
+							<label>Title</label>
+							<div class='inputCnt'>
+								<%= @project.title %>
+							</div>
+							<div class='clear'></div>
+						</div>
+						<div class='row'>
+							<label>Description</label>
+							<div class='inputCnt'>
+								<%= @project.description %>
+							</div>
+							<div class='clear'></div>
+						</div>
+						<div class='row'>
+							<label>Sequence</label>
+							<div class='inputCnt'>
+								<%= @project.sequence %>
+							</div>
+							<div class='clear'></div>
+						</div>
+
+						<div class='row'>
+							<label>Image</label>
+							<div class='inputCnt'>
+								<%= image_tag(@project.photo_url,size: "677x408") %>  
+							</div>
+							<div class='clear'></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+	<div class='wraper'>
+		<div class='sectionCnt'>
+			<h2>
+				Gallery Images
+			</h2>
+			<div class='formLayout'>
+				<div class='row'>
+					<% if @project.images.present? %>
+						<% @project.images.each do |image| %>
+							<%= image.sequence %>
+							<div class='inputCnt'>
+								<%= image_tag(image.photo_url,size: "50x46") %>
+							</div>
+						<% end %>
+					<% end %>
+					<div class='clear'></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<div class='clear'></div>
+</div>
+<div class='clear'></div>
+</div>
+

@@ -1,0 +1,58 @@
+<div class='bodyCnt'>
+  <div class='wraper'>
+    <div class='' id='inner-main'>
+      <div class='subNavCnt'>
+        <h1>New Sequence</h1>
+        <div class='moreLinks'>
+          <ul>
+            <li>
+              <%= link_to 'Back', admin_banners_path %>
+            </li>
+          </ul>
+        </div>
+        <div class='clear'></div>
+      </div>
+      <div class='wraper'>
+        <%= form_for([:admin,@banner],:html=>{:multipart =>true} ) do |f| %>
+          <div class='sectionCnt'>
+            <h2>
+            Banner
+            </h2>
+            <div class='formLayout'>
+
+              <div class='row'>
+                <%= f.label :section %><br>
+                <div class='inputCnt'>
+                  <%= f.select  :section, ["Services","Equipment","Projects"] %>
+                </div>
+                <div class='clear'></div>
+              </div>
+
+              <div class='row'>
+                <%= f.label :message %><br>
+                <div class='inputCnt'>
+                  <%= f.text_area :message %>
+                </div>
+                <div class='clear'></div>
+              </div>
+
+              <div class='row'>
+                <%= f.label :Image %><br>
+                <%#= image_tag(@service.photo_url) if f.photo? %>
+                <%= f.file_field :photo %>
+                <%= f.hidden_field :photo_cache %>
+                <div class='clear'></div>
+              </div>
+
+              <div class='actions'>
+                <%= f.submit %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class='clear'></div>
+  <div class='clear'></div>
+</div>

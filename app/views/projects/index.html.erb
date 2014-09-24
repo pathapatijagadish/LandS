@@ -1,0 +1,84 @@
+<div class='container_12'>
+  <div class='banner'>
+    <div class='homePageBanner'>
+      <% @banners.each do |banner| %>  
+        <div>
+          <%= image_tag(banner.photo_url,size: "1440x500") %>
+          <div class='bannerInfo'>
+            <p><%= banner.message %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% @projects.each do |project| %>
+    <div class='container_12 services'>
+        <ul>
+            <% if (project.id).odd?%>
+                <li>
+                    <div class='servicepic grid_6 alpha omega leftarrow'>
+                        <%= image_tag(project.photo_url,size: "80x46") %>
+                        <span></span>
+                    </div>
+                    <div class='grid_6 alpha omega detailCnt'>
+                        <div class='servicedetail prefix_1 suffix_3'>
+                            <div class='mobileimages'>
+                                <%= image_tag(project.photo_url,size: "80x46") %>
+                            </div>
+                            <div class='panihtwo'>
+                                <h2 class='commomheading'><%= project.title %></h2>
+                                <p style='height: 272px;overflow: hidden;'><%= project.description %>
+                                </p>
+                            </div>
+                            <div class='redbutton'>
+                                <a class='mainbutton' href='http://s3.amazonaws.com/liftandshift/gallery_image/30/original/aljubail-01-02.jpg?1397216561' rel='prettyPhoto[place1]'>VIEW GALLERY</a>
+                                <a href='http://s3.amazonaws.com/liftandshift/gallery_image/31/original/al_jubail_-2-02.jpg?1397216561' rel='prettyPhoto[place1]'></a>
+                                <a href='http://s3.amazonaws.com/liftandshift/gallery_image/32/original/al_jubail_-3-02.jpg?1397216562' rel='prettyPhoto[place1]'></a>
+                                <a href='http://s3.amazonaws.com/liftandshift/gallery_image/33/original/al_jubail_-_4-02.jpg?1397216562' rel='prettyPhoto[place1]'></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='clear'></div>
+                </li>
+            <% else %>
+                <li class='even'>
+                    <div class='grid_6 alpha omega detailCnt'>
+                        <div class='servicedetail prefix_1 suffix_3'>
+                            <div class='mobileimages'>
+                                <%= image_tag(project.photo_url,size: "80x46") %>
+                            </div>
+                            <div class='panihtwo'>
+                                <h2 class='commomheading'><%= project.title %></h2>
+                                <p style='height: 272px;overflow: hidden;'><%= project.description %></p>
+                            </div>
+                            <div class='redbutton'>
+                                <a class='mainbutton' href='http://s3.amazonaws.com/liftandshift/gallery_image/34/original/AdGas_April__-2.jpg?1397217152' rel='prettyPhoto[place2]'>VIEW GALLERY</a>
+                                <a href='http://s3.amazonaws.com/liftandshift/gallery_image/35/original/AdGas_April_074.JPG?1397217152' rel='prettyPhoto[place2]'></a>
+                                <a href='http://s3.amazonaws.com/liftandshift/gallery_image/36/original/AdGas_April_-3.jpg?1397217153' rel='prettyPhoto[place2]'></a>
+                                <a href='http://s3.amazonaws.com/liftandshift/gallery_image/40/original/AdGas_-_4.jpg?1397469402' rel='prettyPhoto[place2]'></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='servicepic grid_6 alpha omega'>
+                        <%= image_tag(project.photo_url,size: "80x46") %>
+                        <span></span>
+                    </div>
+                    <div class='clear'></div>
+                </li>
+            <% end %>
+        </ul>
+        <div class='clear'></div>
+    </div>
+<% end %>
+<script>
+$(function(){
+  $("a[rel^='prettyPhoto']").prettyPhoto({theme:'light_square',social_tools: false});
+});
+</script>
+
+<style>
+.panihtwo{height:400px;}
+.container_12.services li{height: 508px;}
+.servicepic{height:508px;overflow:hidden;}
+</style>

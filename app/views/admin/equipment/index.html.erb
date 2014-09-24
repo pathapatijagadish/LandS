@@ -1,0 +1,43 @@
+<div class='bodyCnt'>
+  <div class='wraper'>
+    <div class='' id='inner-main'>
+      <div class='subNavCnt'>
+        <h1>Equipment</h1>
+        <div class='moreLinks'>
+          <ul>
+            <li>
+              <%= link_to 'New Equipment', new_admin_equipment_path %>
+            </li>
+          </ul>
+        </div>
+        <div class='clear'></div>
+      </div>
+      <table class='cmsTable'>
+        <tr>
+          <th>Sequence</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% @equipment.each do |equipment| %>
+          <tr>
+            <td><%= equipment.sequence %></td>
+            <td><%= equipment.title %></td>
+            <td><%= equipment.description %></td>
+            <td><%= image_tag(equipment.photo_url,size: "80x46") %></td>
+            </td>
+            <td><%= link_to 'Edit', edit_admin_equipment_path(equipment) %></td>
+            <td><%= link_to 'Destroy', admin_equipment_path(equipment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class='clear'></div>
+  <div class='clear'></div>
+</div>
+

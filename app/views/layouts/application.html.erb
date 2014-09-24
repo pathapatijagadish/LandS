@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyApp</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body id='main-container'>
+	<%#= binding.pry %>
+	<% if !((params[:controller] == "devise/sessions") and (params[:action] == "new")) %>
+    	<%= render :partial => "shared/header_content" %> 
+    	<%= yield %>
+    	<%= render :partial => "shared/footer_content" %>
+    <% else %>
+    	<%= yield %>
+    <% end %>
+  </body>

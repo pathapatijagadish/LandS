@@ -1,0 +1,154 @@
+<div class='container_12'>
+  <div class='banner homepageslider'>
+    <div class='homePageBanner'>
+      <% @home_page_sliders.each do |home_page_slider| %>  
+        <div>
+          <%= image_tag(home_page_slider.photo_url,size: "1440x500") %>
+          <div class='bannerInfo'>
+            <p><%= home_page_slider.image_text %></p>
+            <div class='redbutton'>
+              <%= link_to "READMORE",(home_page_slider.link),:class =>"mainbutton"%>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function(e) {
+  
+    $('.homePageBanner').royalSlider({
+      loop: true,
+      keyboardNavEnabled: true,
+      allowCSS3:false,
+      controlsInside: true,
+      imageScaleMode: 'fit',
+      autoScaleSlider: true, 
+      autoScaleSliderWidth: 1440,     
+      autoScaleSliderHeight: 600,
+      controlNavigation: 'bullets',
+      thumbsFitInViewport: true,
+      navigateByClick: true,
+      startSlideId: 0,
+      imageScalePadding:0,
+      slidesSpacing:0,
+      autoPlay: {
+      enabled: true
+    },
+      transitionType:'move',
+      globalCaption: true,
+      deeplinking: {
+      enabled: true,
+      change: false
+    },
+      /* size of all images http://help.dimsemenov.com/kb/royalslider-jquery-plugin-faq/adding-width-and-height-properties-to-images */
+      imgWidth: 1440,
+      imgHeight: 600
+    });
+    
+    
+    $('.homePageBannermob').bxSlider({
+      mode: 'horizontal',
+      captions: true,
+      controls:false,
+      pager:true
+    });
+  
+  });
+</script>
+<% @home_pages.each do |home_page| %>
+<div class='container_12 homeBody'>
+  <% if home_page.sequence == 1 %>
+  <ul class='basicInfo'>
+    <li>
+        <div class='grid_6 alpha omega halfCnt' style="width: 100%;">
+          <div class='grid_6 alpha omega imgCnt'>
+            <%= image_tag(home_page.photo_url,size: "370x370") %>
+          </div>
+
+          <div class='mobileimages grid_6 alpha omega'>
+            <%= image_tag(home_page.photo_url,size: "370x370") %>
+          </div>
+
+          <div class='grid_6 alpha omega informationCnt'>
+            <div class='infoCnt'>
+              <h2 class='commomheading'><%= home_page.title %></h2>
+              <p><%= home_page.description %>
+              </p>
+              <div class='redbutton'>
+                <%= link_to "VIEW SERVICES", services_path ,:class =>"mainbutton"%>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <% if home_page.title == "THE BEST EQUIPMENT" %>
+        <div class='grid_6 alpha omega halfCntsecond gray' style="width: 100%;">
+          <div class='grid_6 imgCnt alpha omega frCnt'>
+            <%= image_tag(home_page.photo_url,size: "370x370") %>
+          </div>
+          <div class='mobileimages grid_6 alpha omega'>
+            <%= image_tag(home_page.photo_url,size: "370x370") %>
+          </div>
+          <div class='grid_6 informationCnt alpha omega'>
+            <div class='infoCnt'>
+              <h2 class='commomheading'><%= home_page.title %></h2>
+              <p><%= home_page.description%></p>
+              <div class='redbutton'>
+                <%= link_to "VIEW EQUIPMENT", equipment_index_path ,:class =>"mainbutton"%>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <div class='clear'></div>
+    </li>
+
+    <li>
+      <% if home_page.sequence == 3 %>
+        <div class='grid_6 alpha omega halfCnt gray' style="width: 100%;">
+          <div class='mobileimages grid_6 alpha omega'>
+            <%= image_tag(home_page.photo_url,size: "370x370") %>
+          </div>
+          <div class='grid_6 informationCnt alpha omega frCnt'>
+            <div class='infoCnt'>
+              <h2 class='commomheading'><%= home_page.title %></h2>
+              <p><%= home_page.description%></p>
+              <div class='redbutton'>
+                <%= link_to "VIEW PROJECTS", projects_path,:class =>"mainbutton" %>
+              </div>
+            </div>
+          </div>
+          <div class='grid_6 imgCnt alpha omega'>
+            <%= image_tag(home_page.photo_url,size: "370x370") %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if home_page.sequence == 4 %>
+        <div class='grid_6 omega alpha halfCntsecond' style="width: 100%;">
+          <div class='mobileimages grid_6 alpha omega'>
+            <%= image_tag(home_page.photo_url,size: "370x370") %>
+          </div>
+          <div class='grid_6 informationCnt alpha omega'>
+            <div class='infoCnt'>
+              <h2 class='commomheading'><%= home_page.title %></h2>
+              <p><%= home_page.description%></p>
+              <div class='redbutton'>
+                <a href="/about_us#blackboxlink" class="mainbutton">READ MORE</a>
+              </div>
+            </div>
+          </div>
+          <div class='grid_6 imgCnt alpha omega'>
+            <%= image_tag(home_page.photo_url,size: "370x370") %>
+          </div>
+        </div>
+      <% end %>
+      <div class='clear'></div>
+    </li>
+    <div class='clear'></div>
+  </ul>
+</div>
+<%end %>

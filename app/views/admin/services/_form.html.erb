@@ -1,0 +1,69 @@
+<div class='bodyCnt'>
+  <div class='wraper'>
+    <div class='' id='inner-main'>
+      <div class='subNavCnt'>
+        <h1>Edit Service</h1>
+        <div class='moreLinks'>
+          <ul>
+            <li>
+              <%= link_to 'Back', admin_services_path %>
+            </li>
+          </ul>
+        </div>
+        <div class='clear'></div>
+      </div>
+
+      <div class='wraper'>
+        <%= form_for ([:admin ,@service]),:html=>{:multipart =>true } do |f| %>
+          <div class='sectionCnt'>
+            <h2>
+            Service
+            </h2>
+            <div class='formLayout'>
+
+              <div class='row'>
+                <%= f.label :title %><br>
+                <div class='inputCnt'>
+                  <%= f.text_field :title %><br>
+                </div>
+                <div class='clear'></div>
+              </div>
+
+              <div class='row'>
+                <%= f.label :description %><br>
+                <div class='inputCnt'>
+                  <%= f.text_area :description %><br>
+                </div>
+                <div class='clear'></div>
+              </div>
+
+              <div class='row'>
+                <%= f.label :sequence %><br>
+                <div class='inputCnt'>
+                  <%= f.number_field :sequence %><br>
+                </div>
+                <div class='clear'></div>
+              </div>
+
+           
+              <div>
+                <%#= image_tag(@service.photo_url) if f.photo? %>
+                <%= f.label :Image %>
+                <%= f.file_field :photo %>
+                <%= f.hidden_field :photo_cache %>
+              </div>
+
+              <div class='actions'>
+                <%= f.submit %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class='clear'></div>
+  <div class='clear'></div>
+</div>
+
+

@@ -1,0 +1,407 @@
+/*Reset CSS*/
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+ol, ul {list-style:none}
+blockquote, q {quotes:none}
+blockquote:before, blockquote:after,q:before, q:after {content:'';content:none}
+table {border-collapse:collapse;border-spacing:0}
+a{color:#000;text-decoration:none;outline:none;}
+body {line-height:1;font:12px Verdana, Geneva, sans-serif;color:#000;background-color: #E6E7E8;}
+img{vertical-align:top}
+/*fonts*/
+@font-face {
+	font-family: 'klavikaRegular';
+	src:url(/assets/fonts/KlavikaRegular-Plain.eot);
+	src: url(/assets/fonts/KlavikaRegular-Plain.woff) format('woff'),
+	 		 url(/assets/fonts/KlavikaRegular-Plain.ttf) format('truetype'),
+	     url(/assets/fonts/KlavikaRegular-Plain.svg) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'klavikaBoldBold1';
+	src: url(/assets/fonts/KlavikaBoldBold1.eot);
+	src: url(/assets/fonts/KlavikaBoldBold1.woff) format('woff'),
+			 url(/assets/fonts/KlavikaBoldBold1.ttf) format('truetype'),
+			 url(/assets/fonts/KlavikaBoldBold1.svg) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/*global classes*/
+.clear{clear:both}
+.clumn{width:198px;float:left}
+.fl{float:left !important;}
+.fr{float:right !important;}
+.AR{text-align:right !important}
+.AL{text-align:left !important}
+.AC{text-align:center !important}
+.error_msg{color:#F00;font-size:10px;}
+h1,h2,h3,h4,h5,h6{color:#0C6;font:bold 12px nexa;}
+h1{font-size:24px;}
+h2{font-size:22px;}
+h3{font-size:18px;}
+h4{font-size:16px;}
+h5{font-size:14px;}
+h6{font-size:12px;}
+input[type="button"],input[type="submit"]{border:none;cursor:pointer;outline:none;}
+/*Global Classes End*/
+/*Table Format Start*/
+.tableFormat{border-top:1px solid #000;border-right:1px solid #000;}
+.tableFormat td,.tableFormat th{border-left:1px solid #000;border-bottom:1px solid #000;padding:5px 10px;}
+.tableFormat th:first-child{border-left-color:#000;}
+.tableFormat th{background:#000;color:#fff;border-left-color:#fff;}
+.tableFormat td{}
+/*Table format end*/
+
+
+
+/*overlay Css*/
+.overlay{width:100%;height:100%;position:fixed;left:0;top:0;background:url(/assets/overlay-bg.png) repeat ;z-index:1000;display:none;}
+.overlayBox{background:#fff;position:fixed;z-index:1001;padding:20px;display:none;margin:0 auto;min-width:250px;min-height:100px}
+.overlayBox .closeBtn {background: none repeat scroll 0 0 #000000;border-radius:24px;-moz-border-radius: 24px;
+-webkit-border-radius: 24px;color: #FFFFFF;cursor: pointer;font: bold 13px Verdana,Geneva,sans-serif;padding: 5px 8px;position: absolute;right: -12px;top: -12px;
+  z-index: 1002;
+}
+.container_12, .container_16{width:100%;margin:0 auto;max-width:1440px;background-color:#fff;}
+
+
+.rsBullets{position:absolute;text-align:center;left:0;bottom:30px;width:100%;}
+.rsBullet span{display:block;text-indent:-90px;overflow:hidden;background:url(/assets/sprite.png) -20px 0;width:18px;height:18px;margin:0 3px;cursor:pointer;}
+.rsNavItem {display: inline-block;}
+.rsBullet.rsNavSelected span{background-position:0 0} 
+
+/*header css*/
+
+.header{padding:20px 0 0;background-color:#fff;position: fixed;top: 0;width: 100%; z-index: 9999;border-bottom:2px solid #BBBDC0}
+.header .topNav{float:right;}
+.header .topNav ul.mainmenu{float:right;}
+.header .topNav .mainmenu li{float:left;padding-bottom:20px;position:relative}
+.header .topNav .mainmenu li:hover a,.header .topNav li.active a{color:#ED1C24;}
+.header .topNav .mainmenu li span{background:url(/assets/downarrow.png) center center no-repeat;display:block;height:10px;position:absolute;bottom:-10px;width:100%;display:none;z-index:9999}
+.header .topNav .mainmenu li.active span{display:block;}
+.header .topNav .mainmenu li a{padding:50px 10px 0;display:block;font-family: 'klavikaRegular';font-size:18px;} 
+.header .topNav .mainmenu li:last-child a{padding:45px 0 0 10px;}
+
+/*mobile navigation*/
+.mobileNavIcon{background:url(/assets/icon-hamburger.png) no-repeat;width:39px;height:34px;display:none;float:right;margin:11px 20px 0 0;}
+.mobileNav.grid_5{width:100%;background:none repeat scroll 0 0 rgba(0, 0, 0, 0);display:none;overflow: hidden;position: absolute;top: 62px; width: 100%;}
+.header .container_12 {position: relative;}
+.mobileNav li{ background: none repeat scroll 0 0 rgba(47, 47, 47, 0.98); border-bottom: 1px solid rgba(255, 255, 255, 0.08);}
+.mobileNav li a{padding:15px;display:block;color:#fff;font-size:14px;font-family: 'klavikaRegular';}
+/*.topNavMobile{display:none;float:right;position:relative;height: 18px;margin: 20px 25px 0;padding: 2px 39px 5px 10px;width:80px;background:url(/assets/drop-down-bg.png) no-repeat right center;cursor:pointer;}
+.topNavMobile ul li{padding:5px 0 5px;font-family:'Open Sans', sans-serif;font-size:14px;}
+.topNavMobile h3{color:#000;font-family:'Open Sans', sans-serif;font-size:14px;}
+.dropDownCnt{position:absolute;display:none;border:1px solid #313131;border-top:none;width:inherit;padding:5px 25px 5px 10px;left:-1px;top:25px;background:#fff;z-index:9999;}*/
+
+/*banner css*/
+.banner{position:relative;margin-top: 110px;}
+.banner img{vertical-align:top;width:100%;}
+.banner .bannerInfo{top:60px;left:50px;position:absolute}
+.banner .bannerInfo p,.homePageBannermob li p{font-size:36px;font-family:'klavikaRegular';color:#fff;width:460px;line-height:46px;}
+.redbutton a.mainbutton,.homePageBannermob a.mainbutton{padding: 9px 34px 9px 15px;font-family:'klavikaRegular';color:#fff;background:url(/assets/right-arrow.png) right center no-repeat #ED1C24;display:inline-block;font-size:18px;transition: all 100ms cubic-bezier(0.25, 0.25, 0.84, 0.325) 0s;}
+.banner .bannerInfo .redbutton{margin-top:20px;}
+
+/*home page css*/
+.homeBody .grid_6 .grid_6{width:50%;}
+.homeBody .grid_6{width:50%;}
+.homeBody li:last-child{border-bottom:none;}
+.homeBody .imgCnt img{width:100%;vertical-align:top;}
+.commomheading{font-family:klavikaBoldBold1;font-size:48px;color:#6D6E70;text-transform:uppercase;}
+.basicInfo .leftborder{border-left:5px solid #BBBDC0;}
+.homeBody .vertical-line{border:2px solid #BBBDC0;height:100%;}
+.informationCnt .infoCnt{padding:6% 6% 0 6%;position:relative;min-height:314px;margin-top: -12px}
+.informationCnt .infoCnt p,.equipment li p,.servicedetail p{color:#939597;font-size:13px;font-family:'Open Sans', sans-serif;padding-bottom:15px;}
+.informationCnt .infoCnt .redbutton{position:absolute;bottom:5%;left:6%;}
+
+/*footer css*/
+.footer{padding:25px 0 20px;min-height:155px;border-top:2px solid #BBBDC0;background-color:#fff}
+.footer dl:first-child{padding-left:20px;width: 20%;}
+.footer dl:nth-child(2){width:16%}
+.footer dl:nth-child(3),.footer dl:nth-child(4){width: 11.3%;}
+.footer dl:nth-child(4){border:none;}
+.footer .spacer{height:51px;}
+.footer dl{border-right:1px solid #939597;font-size:14px;font-family:'Open Sans', sans-serif;min-height:55px;}
+.footer dl dt{color:#000}
+.footer dl dd{color:#939597}
+.footer .container_12 h1{font-family:'klavikaRegular';font-size:40.31px;color:#6D6E70;padding-left:20px;width:9%}
+.footer .container_12 p{font-size:14px;font-family:'Open Sans';color:#939597;padding-top:3px;border-right:1px solid #939597;width:40.5%;}
+.footer .container_12 .downloadlink a{background:url(/assets/download.png) left top no-repeat;display: inline-block;padding: 0 10px 0 63px;width: 117px;font-size:14px;font-family:'Open Sans';color:#939597;}
+.footer .grid_3.client-logo{width:24.5%;}
+.footer .grid_3.client-logo a{float:right;padding-top:5px;}
+
+
+/*about-us css*/
+.aboutus{margin-top:110px;}
+.aboutus p{font-size:13px;font-family:'Open Sans', sans-serif;padding-bottom:15px;}
+.aboutus h1{font-size:48px;font-family:'klavikaBoldBold1';padding-bottom:20px;text-transform:uppercase}
+.aboutus .history{background:url(/assets/History.jpg) top center no-repeat;min-height:545px;border-bottom:2px solid #BBBDC0;padding:4% 0 0 3%}
+.aboutus .advantage{background:url(/assets/advantage.jpg) top center no-repeat;min-height:446px;color:#fff;padding:4% 0 0 0;position:relative;}
+.history .grid_5 h1{color:#000}
+.aboutus .advantage h1{color:#fff;}
+.blackbox{background-color:#000;padding:50px 0 90px;}
+.blackbox .blackboxlist li{text-align:center;}
+.blackbox .blackboxlist li a{color:#fff;font-family:'klavikaRegular';font-size:28px;}
+.blackbox .blackboxlist li span{display:block;background:url(/assets/sprite.png) 4px -36px no-repeat;height:75px;width:75px;margin:0 auto 20px}
+.blackbox .blackboxlist li + li span{background-position:7px -104px;}
+.blackbox .blackboxlist li + li + li span{background-position:7px -256px;}
+.blackbox .blackboxlist li + li + li + li span{background-position:7px -178px;}
+.blackbox h1{font-size:48px;font-family:'klavikaBoldBold1';color:#fff;text-align:center;padding-top:67px;}
+.blackbox p{text-align:center;color:#fff;line-height:30px}
+#blackboxlink{position:absolute;bottom:90px;left:0;}
+
+/*service css*/
+.services .grid_6{width:50%}
+li.even{background-color:#F1F1F2;}
+.services .grid_6 .servicedetail{padding-top:4%;}
+.services .grid_6 img{width:100%;height:100%}
+.servicedetail h2{padding-bottom:10px;}
+.servicepic{position:relative;}
+.servicepic span{display:block;width:100%;height:100%;background:url(/assets/right.png) center left no-repeat;position:absolute;top:0;left:0;}
+.servicepic.leftarrow span{background:url(/assets/left.png) center right no-repeat;}
+.mobileimages{display:none;}
+
+
+/*project css*/
+.services li .detailCnt{min-height:346px;position:relative;}
+.services li .detailCnt .redbutton{position:static;bottom:8.333%;left:8.333%;}
+
+
+/*equipments css*/
+
+.equipment li{height:371px;display:table;}
+.equipment li .grid_4 img{width:100%;}
+.equipment li .grid_4{display: table-cell;height: 100%; vertical-align: middle;float:none;padding:0 2%;width:38%;}
+.gray{background-color:#F1F1F2;}
+
+.basicInfo li .white:hover{background-color:#F1F1F2;}
+.basicInfo li .gray:hover{background-color:#fff;}
+.equipment .grid_4 .commomheading{padding-bottom: 17px;}
+
+.redbutton a.mainbutton:hover{background-color:#BE1E2D;}
+.equipment li .grid_4.mobileshow{display:none;}
+.equipment li .grid_4.mobilehide{display:tabel-cell;}
+.mobilebanner{display:none}
+
+@media only screen 
+and (min-width : 1023px) 
+and (max-width : 1300px){
+		.informationCnt .infoCnt{min-height:285px;}
+		.commomheading{font-size: 46px;}
+		.informationCnt .infoCnt p, .equipment li p{font-size:13px;}
+		.servicedetail p{font-size:12px;}
+		.services .grid_6 .commomheading{font-size: 34px;}
+		.services li .detailCnt{ min-height: 295px;}
+		
+	}
+	
+	
+@media only screen 
+and (min-width : 1023px) 
+and (max-width : 1920px){
+		.aboutus .history{min-height:542px;}
+		.aboutus .advantage{min-height: 442px;}
+		.aboutus{margin-top: 105px;}
+	}
+
+
+@media only screen 
+and (min-width : 748px) 
+and (max-width : 1024px) {
+/*header*/
+.banner{ margin-top: 106px;}
+.aboutus{margin-top: 106px;}
+.header .topNav{width: 60%;}
+.homeBody .grid_6{width:100%;}
+.homeBody .grid_6.halfCnt,.homeBody .grid_6.halfCntsecond{border-left:none;border-right:none;border-bottom:5px solid #BBBDC0;}
+.homeBody li{border-bottom:none;}
+.homeBody .grid_6.frCnt{float:right;}
+.homeBody .commomheading{font-size:35px;}
+.homeBody .basicInfo li p{font-size:13px;}
+.banner .bannerInfo p{font-size: 23px;width: 370px;line-height:30px;}
+.banner .bannerInfo{left: 29px;top: 30px;}
+.header .topNav .mainmenu li a{font-size:15px;}
+.header .topNav .mainmenu li:last-child a{padding-top:43px;}
+/*footer*/
+
+.footer dl{font-size:11px;}
+.footer dl:first-child{width: 22%;}
+.footer dl:nth-child(2){width: 15%;}
+.footer dl:nth-child(3), .footer dl:nth-child(4) {width: 14.3%;}
+.footer .container_12 h1{font-size: 30.31px;width: 13%;}
+.footer .container_12 p{width: 40.5%;font-size: 11px;}
+.footer .container_12 .downloadlink a{font-size: 10px;padding-left:40px;background-size:20%;}
+.footer .grid_3.client-logo{float:right;width: 17.5%;}
+.footer .grid_3.client-logo img{ width: 76%;}
+.panihtwo{height: 315px !important;}
+.services .grid_6 .servicedetail{height:369px !important}
+
+
+/*aboutpage*/
+.aboutus h1{font-size:41px;}
+.aboutus p{font-size:12px;}
+
+/*services*/
+.commomheading{font-size: 19px;}
+.informationCnt .infoCnt p, .equipment li p, .servicedetail p{font-size: 11px;padding-bottom: 7px;}
+.services .grid_6 .servicedetail{ height: 189px; overflow: auto; padding-top: 2%;}
+.container_12 .servicedetail.suffix_3{padding-right:5%}
+.container_12 .servicedetail.prefix_1{padding-left: 5.333%;}
+.services li .detailCnt{min-height: 196px;}
+.equipment li{height:250px;}
+.informationCnt .infoCnt .redbutton{bottom:-5%;}
+.equipment .grid_4 .commomheading{padding-bottom:10px;}
+.servicepic.grid_6{height:388px !important}
+.container_12.services li{height:388px !important}
+}
+
+
+@media only screen 
+and (min-width : 320px) 
+and (max-width : 720px) {
+.aboutus,.banner {margin-top: 73px;}
+.homepageslider{margin-top: 0px;display:none}
+.banner img{width:100%;}
+.logoCnt img{width:100%;}
+.mobileNavIcon{display:inline-block;}
+.header{padding:10px 0;}
+.header .topNavMobile{display:block;}
+.header .topNav ul.mainmenu{display:none;}
+.redbutton a.mainbutton{font-size: 10px;padding: 5px 28px 5px 8px;}
+.banner .bannerInfo p,.homePageBannermob li p{font-size: 12px;width: 210px;line-height:20px;}
+.banner .bannerInfo,.homePageBannermob .bannerInfo {left: 10px;top: 19px;position:absolute}
+.rsBullets{bottom:3px;}
+.homeBody .grid_6 .grid_6,.homeBody .grid_6{width:100%;}
+.homeBody .grid_6.halfCnt,.homeBody .grid_6.halfCntsecond {border:none;}
+.aboutus h1,.blackbox h1{font-size:18px;}
+.aboutus p{font-size: 11px;padding-bottom: 8px;line-height:13px;}
+.blackboxlist li.grid_3{width:48%;}
+.blackbox .blackboxlist li a{font-size: 17px;}
+.footer .spacer{height:0;}
+.footer dl:first-child{ padding-left: 0;}
+.footer dl{width:98% !important;border:none}
+.footer dl dt{padding: 0 20px;}
+.footer dl dd{padding: 0 20px 10px;}
+.footer .container_12 h1{padding-left: 20px;width: 92%;font-size:27px}
+.footer .container_12 p{font-size: 12px;padding: 20px;width: 85%;border-right: none;}
+.footer .downloadlink,.footer .grid_3.client-logo{padding: 18px;width: 36%;}
+.footer .downloadlink a{font-size: 11px;width: 50px;}
+.footer .grid_3.client-logo a{padding:0;float:none;}
+.footer .grid_3.client-logo a img{width:100%;}
+.informationCnt .infoCnt p, .equipment li p, .servicedetail p{font-size:10px;}
+.commomheading{font-size:22px;}
+.equipment li{height: auto;}
+.equipment li .grid_2{display:none;} 
+.equipment li .grid_4{width:94%;display:block}
+.mobileimages{display:block;}
+.mobileimages img{width:100%;}
+.servicepic{display:none;}
+.services .grid_6{width:100%;}
+.servicedetail{border-bottom:2px solid #BBBDC0;}
+.servicedetail h2{padding: 10px 10px 0;}
+.servicedetail p{padding:14px;}
+.services li{border:none;}
+.services .grid_6 .servicedetail.suffix_3,.services .grid_6 .servicedetail.prefix_1{padding:0;}
+.services .grid_6 .servicedetail{padding-top:0;}
+.services li .detailCnt{min-height:305px;}
+.services li .detailCnt .redbutton{position:static;margin:0 0 20px 14px}
+.homeBody .imgCnt{display:none;}
+.informationCnt .infoCnt{min-height:150px;}
+/*.homeBody{border-bottom:5px solid #BBBDC0;border-top:5px solid #BBBDC0;}*/
+.homeBody li{border:none;}
+.panihtwo{height:300px !important}
+.footer .container_12 .downloadlink a{font-size:12px !important;padding: 0 10px 2px 54px !important;width:92px;}
+.equipment li .grid_4.mobileshow{display:block;}
+.equipment li .grid_4.mobilehide{display:none;}
+.equipment .grid_4 .commomheading{padding-top:15px;}
+.container_12.services li{height:auto !important;}
+.hisorydescription{height:384px;overflow:auto;}
+.grid_2.logoCnt{width:45px;margin-left:10px}
+.detailCnt .servicedetail .mobileimages{height:200px;overflow:hidden}
+.services .grid_6 img{width:100%;height:auto}
+.homePageBanner{height:170px;overflow:hidden}
+.homePageBannermob li{height:170px;overflow:hidden}
+.mobilebanner{display:block;padding-top:73px;position:relative}
+.homePageBannermob .redbutton{margin-top:20px;}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-pager {
+	text-align: center;
+	font-size: .85em;
+	font-family: Arial;
+	font-weight: bold;
+	color: #666;
+	padding-top: 20px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+	background:url(/assets/sprite.png) -20px 0;
+	width:18px;height:18px;
+	text-indent: -9999px;
+	display: block;
+	margin: 0 5px;
+	outline: 0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+  background-position:0 0
+}
+.bx-controls.bx-has-pager {
+  bottom: 20px;
+  position: absolute;
+  width: 100%;
+}
+.blackbox p{line-height:16px !important;font-size:12px !important;}
+}
+
+
+/*royal slider */
+
+ #full-width-slider {
+  width: 100%;
+  color: #000;
+}
+
+.fullWidth {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width:960px) and (min-height:660px) {
+  .heroSlider .rsOverflow,
+  .royalSlider.heroSlider {
+      height: 520px !important;
+  }
+}
+
+@media screen and (min-width:960px) and (min-height:1000px) {
+    .heroSlider .rsOverflow,
+    .royalSlider.heroSlider {
+        height: 660px !important;
+    }
+		
+}
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .royalSlider.heroSlider,
+  .royalSlider.heroSlider .rsOverflow {
+    height: 300px !important;
+  }
+	
+	
+  
+}
+
+

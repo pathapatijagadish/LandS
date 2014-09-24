@@ -1,0 +1,35 @@
+<div class='bodyCnt'>
+  <div class='wraper'>
+    <div class='' id='inner-main'>
+      <div class='subNavCnt'>
+        <h1>Company Profile</h1>
+        <div class='moreLinks'>
+          <ul>
+            <li>
+              <%= link_to 'New Banner', new_admin_company_profile_path %>
+            </li>
+          </ul>
+        </div>
+        <div class='clear'></div>
+      </div>
+      <table class='cmsTable'>
+        <tr>
+          <th>Company Profile</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% @company_profiles.each do |company_profile| %>
+          <tr>
+            <td><%= image_tag(company_profile.photo_url,size: "80x46") %></td>
+            <td><%= link_to 'Edit', edit_admin_company_profile_path(company_profile) %></td>
+            <td><%= link_to 'Destroy', admin_company_profile_path(company_profile), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class='clear'></div>
+  <div class='clear'></div>
+</div>

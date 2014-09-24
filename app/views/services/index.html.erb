@@ -1,0 +1,57 @@
+<div class='container_12'>
+  <div class='banner'>
+    <div class='homePageBanner'>
+      <% @banners.each do |banner| %>  
+        <div>
+          <%= image_tag(banner.photo_url,size: "1440x500") %>
+          <div class='bannerInfo'>
+            <p><%= banner.message %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% @services.each do |service| %>
+  <div class='container_12 services'>
+    <ul>
+      <% if (service.id).odd? %>
+          <li>
+            <div class='servicepic grid_6 alpha omega leftarrow'>
+              <%= image_tag(service.photo_url,size: "80x46") %>
+              <span></span>
+            </div>
+            <div class='grid_6 alpha omega'>
+              <div class='servicedetail prefix_1 suffix_3'>
+                <div class='mobileimages'>
+                  <%= image_tag(service.photo_url,size: "80x46") %>
+                </div>
+                <h2 class='commomheading'><%= service.title %></h2>
+                <p><%= service.description %></p>
+              </div>
+            </div>
+            <div class='clear'></div>
+          </li>
+      <% else %>
+          <li class='even'>
+            <div class='grid_6 alpha omega'>
+              <div class='servicedetail prefix_1 suffix_3'>
+                <div class='mobileimages'>
+                  <%= image_tag(service.photo_url,size: "80x46") %>
+                </div>
+                <h2 class='commomheading'><%= service.title %></h2>
+                <p><%= service.description %></p>
+              </div>
+            </div>
+            <div class='servicepic grid_6 alpha omega'>
+              <%= image_tag(service.photo_url,size: "80x46") %>
+              <span></span>
+            </div>
+            <div class='clear'></div>
+          </li>
+        <div class='clear'></div>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+

@@ -1,0 +1,44 @@
+<div class='bodyCnt'>
+  <div class='wraper'>
+    <div class='' id='inner-main'>
+
+      <div class='subNavCnt'>
+        <h1>Sliders</h1>
+        <div class='moreLinks'>
+          <ul>
+            <li>
+              <%= link_to 'New Home page slider', new_admin_home_page_slider_path %>
+            </li>
+          </ul>
+        </div>
+        <div class='clear'></div>
+      </div>
+
+      <table class='cmsTable'>
+        <tr>
+          <th>Sequence</th>
+          <th>Link</th>
+          <th>Type</th>
+          <th>Image</th>
+          <th></th>
+          <th></th>
+        </tr>
+        <% @home_page_sliders.each do |home_page_slider| %>
+          <tr>
+            <td><%= home_page_slider.sequence %></td>
+            <td><%= home_page_slider.link %></td>
+            <td><%= home_page_slider.image_text %></td>
+            <%#= image_tag(home_page_slider.images.image.url(:medium)) %>
+            <td><%= image_tag(home_page_slider.photo_url,size: "80x46") %></td>
+            <td><%= link_to 'Edit', edit_admin_home_page_slider_path(home_page_slider) %></td>
+            <td><%= link_to 'Destroy', admin_home_page_slider_path(home_page_slider), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+      <br>
+    </div>
+  </div>
+  <div class='clear'></div>
+</div>
+

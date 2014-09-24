@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liftandshift</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application','data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body>
+  <div id='cms-container'>
+    <div class='header'>
+      <div class='wraper'>
+        <div class='adminInfo'>
+          <% if admin_signed_in? %>
+           	Logged in as:<%= current_admin.email %>
+            <%= link_to 'Logout', destroy_admin_session_path ,:method => :delete,:style=>"color:#fff" %>
+          <% end %>
+        </div>
+        <div class='logo'>
+          <a href='/'>
+            <%= image_tag("one.png", size: "103x65")%>
+          </a>
+        </div>
+        <div class='clear'></div>
+      </div>
+    </div>
+    <header class='mainNav boxLink'>
+      <section class='wraper'>
+        <nav class='topNav' style="margin-top: 113px;">
+          <ul class='mainMenu'>
+            <li>
+              <%= link_to "Home Page Sliders", admin_home_page_sliders_path %>
+            </li>
+            <li>
+              <%= link_to "Home Pages", admin_home_pages_path %>
+            </li>
+            <li>
+              <%= link_to "Banners", admin_banners_path %>
+            </li>
+            <li>
+              <%= link_to "Services", admin_services_path %>
+            </li>
+            <li>
+              <%= link_to "Equipment", admin_equipment_index_path %>
+            </li>
+            <li>
+              <%= link_to "Projects", admin_projects_path %>
+            </li>
+            <li>
+              <%= link_to "Company Profile", admin_company_profiles_path %>
+            </li>
+          </ul>
+          <div class='clear'></div>
+        </nav>
+      </section>
+    </header>
+    <div class='clear'></div>
+
+   <%= yield %>
+  </div>
+</body>
+</html>
+
+
